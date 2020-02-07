@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="example"></div>
+
+    <script src="../js/react.development.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/react-dom.development.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/babel.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <script type="text/babel">
+        class Demo extends React.Component {
+            test = () => {
+                const { value } = this.refs.userinput
+            }
+            render() {
+                return (
+                    <div>
+                        <input type="text" ref="userinput" />
+                        <button onClick={this.test}>点我获取输入的数据</button>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<Demo />, document.getElementById('example'))
+
+    </script>
+</body>
+
+</html>
